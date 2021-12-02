@@ -51,7 +51,6 @@ public class IoNet implements Closeable {
                 String msg = is.readUTF();
                 callback.onReceive(msg);
             }
-
         } catch (Exception e){
             e.printStackTrace();
         }

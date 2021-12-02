@@ -1,13 +1,11 @@
 package com.geekbrains.chat.client;
 
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -21,22 +19,17 @@ import java.util.stream.Collectors;
 
 public class ChatController implements Initializable {
 
-
     private Path clientDir;
-
     public TextField input;
     public ListView <String> listView;
     public ListView<String> statuses;
     private IoNet net;
     private byte [] buf;
 
-
     @FXML
     public void sendMsg(ActionEvent actionEvent) throws IOException {
         sendFile(input.getText());
     }
-
-
     private void addStatus(String msg){
 
         Platform.runLater(() -> statuses.getItems().add(msg));
@@ -67,7 +60,6 @@ public class ChatController implements Initializable {
 
     private void fillFileView() throws IOException {
         List<String> files = Files.list(clientDir).map(p-> p.getFileName().toString()).collect(Collectors.toList());
-
         listView.getItems().addAll(files);
     }
 
