@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class AppStarter extends Application {
-
     private final String resource;
 
     public AppStarter(String resource) {
